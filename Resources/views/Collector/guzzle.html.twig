@@ -34,6 +34,7 @@
         </p>
     {% else %}
         <ul class="alt">
+            {% set inc = 0 %}
             {% for i, request in collector.requests %}
                 <li class="{{ i is odd ? 'odd' : 'even' }} {% if request.is_error %}error{% endif %}">
                     <div>
@@ -58,6 +59,7 @@
                         <pre style="white-space: pre-wrap; white-space: -moz-pre-wrap !important; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{ request.response }}</pre>
                     </div>
                 </li>
+                {% set inc = inc + 1 %}
             {% endfor %}
         </ul>
     {% endif %}
