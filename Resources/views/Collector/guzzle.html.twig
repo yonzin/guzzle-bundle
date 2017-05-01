@@ -36,7 +36,7 @@
         <ul class="alt">
             {% set inc = 0 %}
             {% for i, request in collector.requests %}
-                <li class="{{ i is odd ? 'odd' : 'even' }} {% if request.is_error %}error{% endif %}">
+                <li class="{{ inc is odd ? 'odd' : 'even' }} {% if request.is_error %}error{% endif %}">
                     <div>
                         <a href="#" onclick="return explain(this);" style="text-decoration: none;" title="Explains"
                            data-target-id="explain-{{ i }}">
